@@ -161,12 +161,33 @@ const editor = grapesjs.init({
             // reacts by opening the AssetManager
             activate: true,
           },
+
+
+          {
+            id: 'row',
+            label: 'row',
+            // Select the component once it's dropped
+            select: true,
+            // You can pass components as a JSON instead of a simple HTML string,
+            // in this case we also use a defined component type `image`
+            content:`<div class='row'>
+            <div><video>This is a simple title</video></div>
+            <div>
+            <h3>This is a simple title</h3>
+            <h1>This is a simple title</h1>
+            <ul><p>This is a simple title</p></ul>
+            <ul><p>This is a simple title</p></ul>
+            <button>This is a simple title</button>
+            </div>
+            </div>`,
+            // This triggers `active` event on dropped components and the `image`
+            // reacts by opening the AssetManager
+            activate: true,
+          },
         ],
 
         
       },
-
-
       selectorManager: {
         appendTo: '.styles-container'
       },
@@ -176,7 +197,7 @@ const editor = grapesjs.init({
             name: 'Dimension',
             open: false,
             // Use built-in properties
-            buildProps: ['width', 'linear-gradient', 'radial-gradient', 'color', 'border-radius', 'text-align', 'border-radius', 'min-height', 'font-size','padding', 'margin', 'display','flex-direction','height', 'z-index', 'position'],
+            buildProps: ['width', 'linear-gradient', 'justify-content', 'background-image', 'radial-gradient', 'color', 'border-radius', 'text-align', 'border-radius', 'min-height', 'font-size','padding', 'margin', 'display','flex-direction','height', 'z-index', 'position'],
             // Use `properties` to define/override single property
             properties: [
               {
