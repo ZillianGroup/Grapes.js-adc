@@ -162,6 +162,26 @@ const editor = grapesjs.init({
             activate: true,
           },
 
+          {
+            id: 'opportunity',
+            label: 'opportunity',
+            // Select the component once it's dropped
+            select: true,
+            // You can pass components as a JSON instead of a simple HTML string,
+            // in this case we also use a defined component type `image`
+            content:`<div class='opporunity'>
+            <div><h1>This is a simple title</h1>
+            <p>This is a simple title</p>
+            <button>This is a simple title</button>
+            </div>
+            </div>`,
+            // This triggers `active` event on dropped components and the `image`
+            // reacts by opening the AssetManager
+            activate: true,
+          },
+
+
+
 
           {
             id: 'row',
@@ -171,14 +191,16 @@ const editor = grapesjs.init({
             // You can pass components as a JSON instead of a simple HTML string,
             // in this case we also use a defined component type `image`
             content:`<div class='row'>
-            <div><video>This is a simple title</video></div>
+            <div> <iframe width="420" height="315"
+            src="https://www.youtube.com/embed/tgbNymZ7vqY">
+            </iframe> </div>
             <div>
-            <h3>This is a simple title</h3>
-            <h1>This is a simple title</h1>
-            <ul><p>This is a simple title</p></ul>
-            <ul><p>This is a simple title</p></ul>
-            <button>This is a simple title</button>
-            </div>
+              <h3>This is a simple title</h3>
+              <h1>This is a simple title</h1>
+              <ul><li>This is a simple title</li></ul>
+              <ul><li>This is a simple title</li></ul>
+              <button>This is a simple title</button>
+            
             </div>`,
             // This triggers `active` event on dropped components and the `image`
             // reacts by opening the AssetManager
@@ -197,7 +219,7 @@ const editor = grapesjs.init({
             name: 'Dimension',
             open: false,
             // Use built-in properties
-            buildProps: ['width', 'linear-gradient', 'justify-content', 'background-image', 'radial-gradient', 'color', 'border-radius', 'text-align', 'border-radius', 'min-height', 'font-size','padding', 'margin', 'display','flex-direction','height', 'z-index', 'position'],
+            buildProps: ['width', 'align-items', 'line-height', 'linear-gradient', 'object-fit','font-weight', 'justify-content', 'background-image', 'radial-gradient', 'color', 'border-radius', 'text-align', 'border-radius', 'min-height', 'font-size','padding', 'margin', 'display','flex-direction','height', 'z-index', 'position'],
             // Use `properties` to define/override single property
             properties: [
               {
@@ -332,6 +354,9 @@ editor.Commands.add('set-device-desktop', {
 editor.Commands.add('set-device-mobile', {
   run: editor => editor.setDevice('Mobile')
 });
+
+
+
 
 
 
