@@ -265,7 +265,7 @@ const editor = grapesjs.init({
             name: 'Dimension',
             open: false,
             // Use built-in properties
-            buildProps: ['width', 'align-items', 'scale','transform', 'line-height', 'linear-gradient', 'object-fit','font-weight', 'justify-content', 'background-image', 'radial-gradient', 'color', 'border-radius', 'text-align', 'border-radius', 'min-height', 'font-size','padding', 'margin', 'display','flex-direction','height', 'z-index', 'position'],
+            buildProps: ['width', 'align-items', 'scale', 'box-shadow', 'transform', 'line-height', 'linear-gradient', 'object-fit','font-weight', 'justify-content', 'background-image', 'radial-gradient', 'color', 'border-radius', 'text-align', 'border-radius', 'min-height', 'font-size','padding', 'margin', 'display','flex-direction','height', 'z-index', 'position'],
             // Use `properties` to define/override single property
             properties: [
               {
