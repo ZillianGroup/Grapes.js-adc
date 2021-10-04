@@ -2,6 +2,10 @@
   border: 3px solid #444;
 }
 
+#ibcb2{
+  background-color: linear-gradient(red, yellow);
+}
+
 /* Reset some default styling */
 .gjs-cv-canvas {
   top: 0;

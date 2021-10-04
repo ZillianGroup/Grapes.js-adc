@@ -122,10 +122,10 @@ const editor = grapesjs.init({
             label: '<b>Section</b>', // You can use HTML/SVG inside labels
             attributes: { class:'gjs-block-section' },
             content: `<section>
-              <h1>This is a simple title</h1>
-              <p>This is a simple title</p>
-              
-              <div>This is just a Lorem text: Lorem ipsum dolor sit amet</div>
+            <div>This is just a Lorem text: Lorem ipsum dolor sit amet</div>
+            <div><h1>This is a simple title</h1>
+            <p>This is a simple title</p></div>
+            <div>This is just a Lorem text: Lorem ipsum dolor sit amet</div>
             </section>`,
           }, {
             id: 'text',
@@ -180,6 +180,34 @@ const editor = grapesjs.init({
             // reacts by opening the AssetManager
             activate: true,
           },
+
+          {
+            id: 'connect',
+            label: 'connect',
+            // Select the component once it's dropped
+            select: true,
+            // You can pass components as a JSON instead of a simple HTML string,
+            // in this case we also use a defined component type `image`
+            content:`<div class='connect'>
+            <div>
+             <div>
+                
+              </div>
+             <div>
+                <p>This is a simple title</p>
+             </div>
+            </div>
+
+            <div>
+            <p>This is a simple title</p>
+            <p>This is a simple title</p>
+            </div>
+            </div>`,
+            // This triggers `active` event on dropped components and the `image`
+            // reacts by opening the AssetManager
+            activate: true,
+          },
+
 
           {
             id: 'contact',
@@ -265,7 +293,7 @@ const editor = grapesjs.init({
             name: 'Dimension',
             open: false,
             // Use built-in properties
-            buildProps: ['width', 'align-items', 'top', 'bottom', 'left', 'right', 'scale', 'box-shadow', 'transform', 'line-height', 'linear-gradient', 'object-fit','font-weight', 'justify-content', 'background-image', 'radial-gradient', 'color', 'border-radius', 'text-align', 'border-radius', 'min-height', 'font-size','padding', 'margin', 'display','flex-direction','height', 'z-index', 'position'],
+            buildProps: ['width', 'align-items', 'top', 'bottom', 'left',  'right', 'scale', 'box-shadow', 'transform', 'line-height', 'linear-gradient', 'object-fit','font-weight', 'justify-content', 'background-image', 'radial-gradient', 'color', 'border-radius', 'text-align', 'border-radius', 'min-height', 'font-size','padding', 'margin', 'display','flex-direction','height', 'z-index', 'position'],
             // Use `properties` to define/override single property
             properties: [
               {
@@ -282,7 +310,7 @@ const editor = grapesjs.init({
           },{
             name: 'Extra',
             open: false,
-            buildProps: ['background-color', 'box-shadow', 'custom-prop'],
+            buildProps: ['background-color', 'linear-gradient', 'box-shadow', 'custom-prop'],
             properties: [
               {
                 id: 'custom-prop',
@@ -410,7 +438,8 @@ const phoneInput = window.intlTelInput(phoneInputField, {
     "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
 });
 
-
+var html = editor.getHtml();
+var css = editor.getCss();
 
 
 
